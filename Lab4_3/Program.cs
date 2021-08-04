@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace Lab4_3
 {
     //create a customer class w/private fields: p for private...
@@ -75,7 +75,46 @@ namespace Lab4_3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //testing it out
+            //Customer bert = new Customer("Bert's Burgers", "Bert Smith", "BTSmith@Bertsburgers.com", "248-351-4752");
+            //Console.WriteLine(bert);
+            //bert.SetCompany("Burt's Best Burgers");
+            //bert.SetContactEmail("Number1Burgers@Bertsbestburgers.com");
+            //bert.SetContactName("Bert the Burger Beast");
+            //bert.SetPhone("1-800-BURGER1");
+            //Console.WriteLine();
+            //Console.WriteLine(bert);
+            //Console.WriteLine($"{bert.GetCompany()} {bert.GetContactEmail()}  {bert.GetContactName()} {bert.GetPhone()}");
+
+            //Customer Phil = new Customer("Phil's Pizza", "Phil CheeseSteak", "Orders@PhilsPizza.com", "313-451-4200");
+            //Console.WriteLine(Phil);
+
+            //make a List of customer instances and save it in a variable name of your choice. 
+            //make all the customers first:
+
+            Customer Frank = new Customer("Frank Lloyd Wright Jr.'s Carpet Emporium", "Frank Wright Jr", "FLW@FLWCarpet.com", "313-1CARPET");
+            Customer John = new Customer("John Legend's Fancy Silky Smooth Shirts", "John Legend", "JLegend@silksmooth.com", "313-SMOOTH1");
+            Customer Jack = new Customer("The School of Rockin' Rock", "Jack Black III", "JB1@SOR.com","313-ONE-ROCK");
+            Customer Amy = new Customer("Not your mamma's shoes...", "Amy Schumer", "NYMS@shoebeast.com","313-NSFW-SHU" );
+
+            //make the list:
+            List<Customer> customers = new List<Customer>();
+
+            //add stuff to it:
+
+            customers.Add(Frank);
+            customers.Add(John);
+            customers.Add(Jack);
+            customers.Add(Amy);
+
+            //test it out:
+            //foreach (Customer tcustomer in customers)
+            //{
+            //    Console.WriteLine(tcustomer);
+            //}
+
+
+
         }
     }
 }
