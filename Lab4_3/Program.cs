@@ -97,6 +97,18 @@ namespace Lab4_3
             return null;
         }
 
+        //static Customer SearchPhone(List<Customer> customerlist, string _Phone)
+        //{
+        //    foreach (Customer nextphone in customerlist)
+        //    {
+        //        if (nextphone.GetPhone() == _Phone)
+        //        {
+        //            return nextphone;
+        //        }
+        //    }
+        //    return null;
+        //}
+
         //function that can search by 
         static void Main(string[] args)
         {
@@ -115,15 +127,18 @@ namespace Lab4_3
             //Console.WriteLine(Phil);
 
             //make a List of customer instances and save it in a variable name of your choice. 
-            //make all the customers first:
+            //make all the customers first
+
 
             Customer Frank = new Customer("Frank Lloyd Wright Jr.'s Carpet Emporium", "Frank Wright Jr", "FLW@FLWCarpet.com", "313-1CARPET");
             Customer John = new Customer("John Legend's Fancy Silky Smooth Shirts", "John Legend", "JLegend@silkysmooth.com", "313-SMOOTH1");
             Customer Jack = new Customer("The School of Rockin' Rock", "Jack Black III", "JB1@SOR.com","313-ONE-ROCK");
             Customer Amy = new Customer("Not Your Mamma's shoes...", "Amy Schumer", "NYMS@shoebeast.com","313-NSFW-SHU" );
 
+
             //make the list:
             List<Customer> customers = new List<Customer>();
+
 
             //add stuff to it:
 
@@ -132,16 +147,50 @@ namespace Lab4_3
             customers.Add(Jack);
             customers.Add(Amy);
 
-            //test it out:
-            //foreach (Customer tcustomer in customers)
-            //{
-            //    Console.WriteLine(tcustomer);
+            
+            //print out the customer list:
+            ListCustomers(customers);
+
+            Console.WriteLine("\nPlease input a Company name to search for: ");
+            string userinput = Console.ReadLine();
+
+            //a return statement provides an object. 
+            //make a container for it
+            //it has to be called Customer in this case
+            //and u call it result cuz it's the result ur looking for.
+            //searchcomp result returns a customer, so u have to put it IN a customer...c#is super ocd...
+
+            Customer result = SearchComp(customers,userinput);
+            //search the list the for a company
+            //print out either the result--customer info
+            //or, tell them customer doesn't exist
+
+            if (result is null)
+            {
+                Console.WriteLine("This customer does not exist.");
+            }
+            else
+                
+            {
+                Console.WriteLine("\nHere is the customer info: ");
+                Console.WriteLine(result.ToString());
+            }
+
+            //doing another rep for practice...
+            //Console.WriteLine("please enter a phone number to search: (include dashes)");
+            //string userphone = Console.ReadLine();
+
+            //Customer phoneresult = SearchPhone(customers, userphone);
+            //if (phoneresult is null)
+            //{        Console.WriteLine("This phone number doesn't exist");
             //}
-            //Console.WriteLine("\nHere's my customer list");
-            //ListCustomers(customers);
 
+            //else
+            //{
+            //    Console.WriteLine("\nHere is the customer info: ");
+            //    Console.WriteLine(phoneresult.ToString());
+            //}
 
-           // customers = SearchComp()
 
 
 
